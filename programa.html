@@ -1,0 +1,64 @@
+<!--  CANVAS - AULA 01 = DESENHANDO GRÁFICOS EM CANVAS
+    tela para fazer desenhos pelo js
+
+
+    canvas é uma tag do html, uma area para desenhar
+
+    canvas tem API
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Document</title>
+   </head>
+   <body></body>
+ </html>
+ 
+ <canvas width="600" height="400"></canvas> <!-- quanto o canvas pega de espaço-->
+ <!-- w = largura e h = altura-->
+ 
+ <script>
+   //Ter avesso ao canvas no js
+ 
+   let tela = document.querySelector('canvas');
+   let pincel = tela.getContext('2d'); // getContext = pode utilizar ferramentas do js / '2D o tipo de pincel'
+ 
+   pincel.fillStyle = 'red'; //uma propriedade, tem que vim antes, ordem de hierarquia // recebe uma atribuição, "variável"
+   pincel.fillRect(0, 0, 600, 400); //fill = preencher rect = retangulo 
+   // posicionar o pincel, plano carteseano -  y,x = 0 (canto superior esquerdo) y (altura = 400), x (largura = 600)
+ 
+   /* 
+ O fillRect() precisa de algumas informações para conseguir desenhar o retângulo, que estarão na ordem: posição inicial X do “pincel”, posição inicial Y do “pincel”, posição final X do “pincel”, posição final Y do “pincel”.
+ */
+ 
+   pincel.fillStyle = 'green'; //style primeiro
+   pincel.fillRect(0, 0, 200, 400); // x , y , x , y essa ordem
+ 
+   pincel.fillStyle = 'blue';
+   pincel.fillRect(400, 0, 200, 400); // 600 / 3 = 200
+ 
+   pincel.fillStyle = 'yellow';
+   pincel.beginPath(); //começar um caminho onde o pincel vai seguir para fazer um desenho
+   pincel.moveTo(300, 200); // botar um ponto no meio da bandeira x 600 / 2 = 300 // y 400 / 2 = 200
+   pincel.lineTo(200, 400);  // fazer um linha x 600 / 300 = 200 (tamanho de um retagulo colorido) y = 400 a altura completa ele vai para no final
+   pincel.lineTo(400, 400); // x = 400 pq é corresponde ao retângulo vermelho
+   pincel.fill(); // preencher por completo
+ 
+ 
+   //Fazendo um círculo 
+ 
+   pincel.fillStyle = 'white';
+   pincel.beginPath()  //sempre fazer outro para iniciar novo desenho 
+ 
+   pincel.arc(300, 200, 50, 0, 2 * 3.14); //para fazer círculos 
+   // 300 e 200 (x e y fica no meio) 50 (raio do círculo) 0 (ângulo inicial) 2 * 3,14 (ângulo final em radiando)
+ 
+   pincel.fill()
+ 
+ 
+ </script>
+ 
