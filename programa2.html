@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+    /** let tela = document.querySelector("canvas");
+    let pincel = tela.getContext("2d");
+
+    pincel.fillStyle = "green";
+    pincel.fillRect(0,0,50,50);
+    pincel.fillStroke = 'black'; //cor da borda
+    pincel.strokeRect(0,0,50,50);//faz uma borda
+
+    pincel.fillStyle = "green";
+    pincel.fillRect (50,0, 50, 50);
+
+    pincel.fillRect(100, 0, 50, 50);
+    pincel.fillStroke = 'black'; 
+    pincel.strokeRect(100,0,50,50);
+
+*/
+
+function desenhaQuadrado(x, y, cor) { //forma de ficar mais elegante
+
+    let tela = document.querySelector("canvas");
+    let pincel = tela.getContext("2d");
+
+    pincel.fillStyle = cor;
+    pincel.fillRect(x,y,50,50);
+    pincel.fillStroke = 'black'; //cor da borda
+    //pincel.strokeStyle = 'red' //muda acor pradão do stroke que é preto
+    pincel.strokeRect(x,y,50,50);
+       
+}
+
+//Automatizando com WHILE
+
+/* let x = 0
+    while(x < 600) {
+        
+        desenhaQuadrado(x, 0, "green");
+        
+        x = x + 50;
+    }
+*/
+
+//Usando o FOR
+
+    for(let x = 0; x < 600; x = x + 50) {
+        
+        desenhaQuadrado(x, 0, "green");
+        
+    }
+
+
+
+    
+</script>
